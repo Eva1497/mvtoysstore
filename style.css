@@ -1,0 +1,249 @@
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background-color: #b5d9eb;
+  color: #dbae25;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header .logo h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  display: flex; /*tampilannya menyesuaikan device laptop or hp*/
+  justify-content: center;
+  gap: 20px; /*jarak antar list item*/
+}
+
+nav ul li {
+  display: inline; /*ada muncul bullet*/
+}
+
+nav ul li a {
+  text-decoration: none; /*hilangkan underline*/
+  color: #512775;
+  font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+  color: #d21f5a; /*warna jika aktif diklik mouse*/
+}
+
+.products {
+  display: grid; /*pengaturan tata letak*/
+  grid-template-columns: repeat(5, 1fr); /*setting 5 picture dalam 1 baris*/
+  padding: 20px;
+}
+
+.product-card {
+  background-color: rgb(202, 57, 134);
+  border-radius: 8px;
+  width: 200px;
+  margin-bottom: 20px;
+  text-align: center;
+  overflow: hidden; /*berhubungan dengan border radius*/
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+
+.product-card p {
+  font-size: 1.1rem;
+  color: #f0a500;
+  margin-bottom: 15px;
+}
+
+.product-card button {
+  background-color: #f0a500;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.product-card button:hover {
+  background-color: #0adb18;
+}
+
+/* Tombol Bayar */
+#bayar-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+#bayar-button:hover {
+  background-color: #45a049;
+}
+
+/* Tampilan Total Harga */
+.total-harga {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Styling untuk halaman detail produk */
+.product-detail {
+  display: block; /* Mengatur tampilan menjadi blok, bukan flex */
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Membatasi lebar maksimal agar lebih rapi */
+}
+
+.product-image {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-info h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-info p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.product-info .price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #4caf50;
+  margin-top: 20px;
+}
+
+.product-info button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.product-info button:hover {
+  background-color: #45a049;
+}
+
+.product-info button:focus {
+  outline: none;
+}
+
+*--------------------------------------------------------------
+  #
+  Contact
+  Section
+  --------------------------------------------------------------*/
+  section.contact {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+section.contact h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.contact-details {
+  flex: 1 1 300px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details h3 {
+  font-size: 24px;
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.contact-details p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.contact-details a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #2f97a4;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

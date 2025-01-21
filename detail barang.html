@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Detail Produk - Store Mavatoys</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      // Fungsi untuk menambah produk ke keranjang
+      function tambahKeKeranjang(namaProduk, hargaProduk, gambarProduk) {
+        // Ambil keranjang dari localStorage atau buat array baru jika kosong
+        let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+
+        // Menambahkan produk ke keranjang
+        keranjang.push({
+          nama: namaProduk,
+          harga: hargaProduk,
+          gambar: gambarProduk,
+        });
+
+        // Simpan kembali keranjang ke localStorage
+        localStorage.setItem("keranjang", JSON.stringify(keranjang));
+
+        // Menampilkan pesan dan jumlah item di keranjang
+        alert(`${namaProduk} telah ditambahkan ke shopping cart!`);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <h1>STORE MAVATOYS</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="detail barang.html">Product</a></li>
+          <li><a href="keranjang.html">Shopping Cart</a></li>
+          <li><a href="kontak mavatoys.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Detail Produk -->
+    <section class="product-detail">
+      <div class="product-image">
+        <img src="Tas Bayi.jpg" alt="Tas Bayi" />
+      </div>
+      <div class="product-info">
+        <h2>Tas Bayi</h2>
+        <p><strong>Harga:</strong> Rp 380.000</p>
+        <p>
+          <strong>Deskripsi:</strong> Tas bayi ini dirancang untuk kenyamanan
+          dan keamanan bayi Anda. Dilengkapi dengan banyak ruang untuk menaruh
+          perlengkapan bayi dan bahan yang sangat nyaman serta mudah
+          dibersihkan.
+        </p>
+        <!-- Tombol untuk menambahkan ke keranjang -->
+        <button onclick="tambahKeKeranjang('Tas Bayi', 380000, 'Tas Bayi.jpg')">
+          Shopping Cart
+        </button>
+      </div>
+
+      <div class="product-image">
+        <img src="Stroller Bayi.jpg" alt="Stroller Bayi" />
+      </div>
+      <div class="product-info">
+        <h2>Stroller Bayi</h2>
+        <p><strong>Harga:</strong> Rp 950.000</p>
+        <p>
+          <strong>Deskripsi:</strong> Stroller bayi ini dirancang untuk
+          kenyamanan bayi Anda saat tidur baik di dalam maupun di luar ruangan.
+          Dilengkapi dengan 4 buah roda yang dapat berputar 360 derajat, kantong
+          penyimpanan barang pada bagian bawah serta posisi tidur bayi yang
+          dapat diatur sesuai keinginan anda.
+        </p>
+        <!-- Tombol untuk menambahkan ke keranjang -->
+        <button
+          onclick="tambahKeKeranjang('Stroller Bayi', 950000, 'Stroller Bayi.jpg')"
+        >
+          Shopping Cart
+        </button>
+      </div>
+
+      <div class="product-image">
+        <img src="Gendongan Bayi.jpg" alt="Gendongan Bayi" />
+      </div>
+      <div class="product-info">
+        <h2>Gendongan Bayi</h2>
+        <p><strong>Harga:</strong> Rp 700.000</p>
+        <p>
+          <strong>Deskripsi:</strong> Gendongan bayi ini dirancang untuk
+          memudahkan sang ibu dalam menggendong bayi dengan aman dan nyaman.
+          Gendongan bayi ini terbuat dari bahan cotton yang lembut dan kuat
+          sehingga membuat bayi merasa nyaman dalam pelukan sang ibu.
+        </p>
+        <!-- Tombol untuk menambahkan ke keranjang -->
+        <button
+          onclick="tambahKeKeranjang('Gendongan Bayi', 700000, 'Gendongan Bayi.jpg')"
+        >
+          Shopping Cart
+        </button>
+      </div>
+
+      <div class="product-image">
+        <img src="Box Bayi.jpg" alt="Box Bayi" />
+      </div>
+      <div class="product-info">
+        <h2>Box Bayi</h2>
+        <p><strong>Harga:</strong> Rp 1.000.000</p>
+        <p>
+          <strong>Deskripsi:</strong> Box bayi ini dirancang untuk kenyamanan
+          dan keamanan bayi Anda. Dilengkapi dengan bantal dan guling bayi dan
+          bahan yang sangat nyaman serta mudah dibersihkan. Memiliki ukuran 100
+          x 50 cm dengan roda pada bagian bawah sehingga mudah untuk
+          dipindahkan.
+        </p>
+        <!-- Tombol untuk menambahkan ke keranjang -->
+        <button
+          onclick="tambahKeKeranjang('Box Bayi', 1000000, 'Box Bayi.jpg')"
+        >
+          Shopping Cart
+        </button>
+      </div>
+
+      <div class="product-image">
+        <img src="Bouncer Bayi.jpg" alt="Bouncer Bayi" />
+      </div>
+      <div class="product-info">
+        <h2>Bouncer Bayi Elektrik</h2>
+        <p><strong>Harga:</strong> Rp 1.100.000</p>
+        <p>
+          <strong>Deskripsi:</strong> Bouncer bayi atau ayunan bayi elektrik ini
+          dirancang untuk dapat bergerak secara otomatis sehingga dapat
+          meningkatkan kenyamanan dan keamanan bayi Anda saat tidur. Dilengkapi
+          dengan banyak fitur seperti music, remote control dan juga timer.
+        </p>
+        <!-- Tombol untuk menambahkan ke keranjang -->
+        <button
+          onclick="tambahKeKeranjang('Bouncer Bayi', 1100000, 'Bouncer Bayi.jpg')"
+        >
+          Shopping Cart
+        </button>
+      </div>
+
+      <div class="product-image">
+        <img src="Baby Walker.jpg" alt="Baby Walker" />
+      </div>
+      <div class="product-info">
+        <h2>Baby Walker</h2>
+        <p><strong>Harga:</strong> Rp 550.000</p>
+        <p>
+          <strong>Deskripsi:</strong> Baby Walker ini dirancang untuk membantu
+          sang anak belajar berjalan. Dilengkapi dengan roda yang dapat berputar
+          360 derajat dan meja yang dapat difungsikan untuk menyimpan makanan
+          maupun mainanan.
+        </p>
+        <!-- Tombol untuk menambahkan ke keranjang -->
+        <button
+          onclick="tambahKeKeranjang('Baby Walker', 550000, 'Baby Walker.jpg')"
+        >
+          Shopping Cart
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        &copy; 2024 Store E-Commerce MAVATOYS. All Rights Reserved by Eva
+        Cristiani.
+      </p>
+    </footer>
+  </body>
+</html>

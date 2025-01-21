@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Keranjang Belanja - Store Mavatoys</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      // Ambil data keranjang dari localStorage jika ada
+      let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+
+      // Fungsi untuk menampilkan keranjang belanja
+      function tampilkanKeranjang() {
+        const keranjangDiv = document.getElementById("keranjang");
+        const totalHargaDiv = document.getElementById("total-harga");
+        keranjangDiv.innerHTML = ""; // Bersihkan isi keranjang sebelum menampilkan ulang
+
+        let totalHarga = 0;
+
+        // Menampilkan item-item dalam keranjang
+        keranjang.forEach((produk, index) => {
+          keranjangDiv.innerHTML += `
+            <div class="produk-item">
+              <img src="${produk.gambar}" alt="${
+            produk.nama
+          }" style="width: 200px; height: 200px;"/>
+              <p>${produk.nama} - Rp ${produk.harga.toLocaleString()}</p>
+              <button onclick="hapusDariKeranjang(${index})">Hapus</button>
+            </div>
+          `;
+          totalHarga += produk.harga;
+        });
+
+        // Menampilkan total harga
+        totalHargaDiv.innerHTML = `Total Harga: Rp ${totalHarga.toLocaleString()}`;
+
+        // Menampilkan tombol bayar jika ada produk di keranjang
+        if (keranjang.length > 0) {
+          document.getElementById("bayar-button").style.display = "block";
+        } else {
+          document.getElementById("bayar-button").style.display = "none";
+        }
+      }
+
+      // Fungsi untuk menghapus produk dari keranjang
+      function hapusDariKeranjang(index) {
+        keranjang.splice(index, 1);
+        localStorage.setItem("keranjang", JSON.stringify(keranjang));
+        tampilkanKeranjang(); // Update tampilan setelah penghapusan
+      }
+
+      // Fungsi untuk melanjutkan ke halaman pembayaran
+      function lanjutKePembayaran() {
+        // Di sini kita bisa menambahkan logika pembayaran
+        alert(
+          "Pembayaran berhasil. Terima kasih telah berbelanja di Mavatoys!"
+        );
+        // Mengosongkan keranjang setelah pembayaran
+        localStorage.removeItem("keranjang");
+        tampilkanKeranjang(); // Perbarui tampilan keranjang
+      }
+
+      // Jalankan fungsi tampilkanKeranjang ketika halaman dimuat
+      window.onload = tampilkanKeranjang;
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <h1>STORE MAVATOYS</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="detail barang.html">Product</a></li>
+          <li><a href="keranjang.html">Shopping Cart</a></li>
+          <li><a href="kontak mavatoys.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Keranjang Belanja -->
+    <section id="keranjang" class="keranjang">
+      <h2>Keranjang Belanja Anda</h2>
+      <!-- Produk akan ditampilkan di sini -->
+    </section>
+
+    <!-- Total Harga -->
+    <section>
+      <div id="total-harga" class="total-harga"></div>
+    </section>
+
+    <!-- Tombol Bayar -->
+    <section>
+      <button
+        id="bayar-button"
+        style="display: none"
+        onclick="lanjutKePembayaran()"
+      >
+        Bayar
+      </button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        &copy; 2024 Store E-Commerce MAVATOYS. All Rights Reserved by Eva
+        Cristiani.
+      </p>
+    </footer>
+  </body>
+</html>

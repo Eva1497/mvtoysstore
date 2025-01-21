@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>E-Commerce Perlengkapan Bayi</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      // Membuat array untuk menyimpan barang dalam keranjang
+      let keranjang = [];
+
+      // Fungsi untuk menambahkan barang ke keranjang
+      function tambahKeKeranjang(namaProduk, hargaProduk, gambarProduk) {
+        // Ambil keranjang dari localStorage atau buat array baru jika kosong
+        let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+
+        // Menambahkan produk ke keranjang
+        keranjang.push({
+          nama: namaProduk,
+          harga: hargaProduk,
+          gambar: gambarProduk,
+        });
+
+        // Simpan kembali keranjang ke localStorage
+        localStorage.setItem("keranjang", JSON.stringify(keranjang));
+
+        // Menampilkan pesan dan jumlah item di keranjang
+        alert(`${namaProduk} telah ditambahkan ke keranjang!`);
+        console.log(keranjang); // Debug untuk melihat keranjang
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <h1>STORE MAVATOYS</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="detail barang.html">Product</a></li>
+          <li><a href="keranjang.html">Shopping Cart</a></li>
+          <li><a href="kontak mavatoys.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content (Produk) -->
+    <section class="products">
+      <div class="product-card">
+        <img src="Tas Bayi.jpg"Produk 1" />
+        <h3>Tas Bayi</h3>
+        <p>Rp 380.000</p>
+        <a href="detail barang.html"></a>
+        <button onclick="tambahKeKeranjang('Tas Bayi', 380000, 'Tas Bayi.jpg')">
+          Shopping Cart
+        </button>
+      </div>
+
+      <div class="product-card">
+        <img src="Stroller Bayi.jpg" alt="Produk 2" />
+        <h3>Stroller Bayi</h3>
+        <p>Rp 950.000</p>
+        <a href="detail barang.html"></a>
+        <button
+          onclick="tambahKeKeranjang('Stroller Bayi', 950000, 'Stroller Bayi.jpg')"
+        >
+          Shopping Cart
+        </button>
+      </div>
+
+      <div class="product-card">
+        <img src="Gendongan Bayi.jpg" alt="Produk 3" />
+        <h3>Gendongan bayi</h3>
+        <p>Rp 700.000</p>
+        <a href="detail barang.html"></a>
+        <button
+          onclick="tambahKeKeranjang('Gendongan Bayi', 700000, 'Gendongan Bayi.jpg')"
+        >
+          Shopping Cart
+        </button>
+      </div>
+
+      <div class="product-card">
+        <img src="Box Bayi.jpg" alt="Produk 4" />
+        <h3>Box Bayi</h3>
+        <p>Rp 1.000.000</p>
+        <a href="detail barang.html"></a>
+        <button
+          onclick="tambahKeKeranjang('Box Bayi', 1000000, 'Box Bayi.jpg')"
+        >
+          Shopping Cart
+        </button>
+      </div>
+
+      <div class="product-card">
+        <img src="Bouncer Bayi.jpg" alt="Produk 4" />
+        <h3>Bouncer Bayi Elektrik</h3>
+        <p>Rp 1.100.000</p>
+        <a href="detail barang.html"></a>
+        <button
+          onclick="tambahKeKeranjang('Bouncer Bayi Elektrik', 1100000, 'Bouncer Bayi.jpg')"
+        >
+          Shopping Cart
+        </button>
+      </div>
+
+      <div class="product-card">
+        <img src="Baby Walker.jpg" alt="Produk 4" />
+        <h3>Baby Walker</h3>
+        <p>Rp 550.000</p>
+        <a href="detail barang.html"></a>
+        <button
+          onclick="tambahKeKeranjang('Baby Walker', 550000, 'Baby Walker.jpg')"
+        >
+          Shopping Cart
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        &copy; 2024 Store E-Commerce MAVATOYS. All Rights Reserved by Eva
+        Cristiani.
+      </p>
+    </footer>
+  </body>
+</html>
